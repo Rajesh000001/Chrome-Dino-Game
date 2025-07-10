@@ -3,31 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Chrome Dino Game</title>
+  <title>Dino Clone Game</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <h1>Dino Clone Game</h1>
 
-  <!-- Game Title -->
-  <header>
-    <h1>Dino Clone Game</h1>
-  </header>
-
-  <!-- Game Info Bar -->
- <div id="gameBar">
-  <h2 id="gameOver">💀 Game Over! press space again to continue</h2>
-  <h3 id="score">Score: 0</h3>
-  <h3 id="highScore">High Score: 0</h3>
-  <h4 id="speedDisplay">Speed: 0</h4>
-</div>
-  <!-- Game Arena -->
-  <div class="game">
-    <div id="dino"></div>
-    <!-- Obstacles are generated dynamically in JS -->
+  <div id="gameBar">
+    <p id="gameOver" class="hide">💀 <strong>Game Over!</strong> Press space or tap screen to continue</p>
+    <p id="score">Score: 0</p>
+    <p id="highScore">High Score: 0</p>
+    <p id="speedDisplay">Speed: 2.00s</p>
   </div>
 
-  <!-- JS Script -->
-  <script src="script.js"></script>
+  <div class="game">
+    <div id="dino"></div>
+  </div>
 
+  <script src="script.js"></script>
 </body>
 </html>

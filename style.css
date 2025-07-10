@@ -1,111 +1,93 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #1a3a3a;
-    color: white;
+  background-color: #133b3b;
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+  padding: 20px;
+  overflow-x: hidden;
 }
 
 h1 {
-    position: fixed;
-    top: 10px;
-    font-size: 2rem;
-}
-
-h4 {
-    color: aqua;
+  margin-bottom: 10px;
 }
 
 #gameBar {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  color: white;
+  position: relative;
+  margin-bottom: 10px;
   display: flex;
   flex-direction: column;
   gap: 5px;
+  align-items: center;
+  text-align: center;
 }
-
 
 #gameOver {
-    display: none;
-    color: red;
-    font-size: 2rem;
-    margin-top: 20px;
-}
-
-#score {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    font-size: 1.2rem;
+  color: red;
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: none;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .game {
-    width: 80vw;
-    height: 60vh;
-    background-color: black;
-    border: 3px solid white;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: flex-end;
+  width: 90vw;
+  max-width: 900px;
+  height: 250px;
+  background-color: black;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid white;
+  margin-bottom: 30px;
 }
 
-/* Dino */
 #dino {
-    background-image: url("dinoidle.gif");
-    background-color: black;
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 25%;
-    width: 8%;
-    position: absolute;
-    left: 5%;
-    max-width: 50px;
-    max-height: 50px;
+  width: 40px;
+  height: 40px;
+  background-image: url("dinoidle.gif");
+  background-size: cover;
+  position: absolute;
+  bottom: 0;
+  left: 50px;
 }
 
-/* Dynamic Obstacles */
 .obstacle {
-    background-color: white;
-    position: absolute;
-    bottom: 0;
-    right: -10%;
-    border-radius: 3px;
-    animation: moveObstacle 2s linear forwards;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: white;
+  animation: moveObstacle 2s linear forwards;
 }
 
-/* Animations */
 @keyframes moveObstacle {
-    0% {
-        right: -10%;
-    }
-    100% {
-        right: 100%;
-    }
-}
-
-@keyframes jump {
-    0% {
-        bottom: 0;
-    }
-    50% {
-        bottom: 120px;
-    }
-    100% {
-        bottom: 0;
-    }
+  from {
+    right: -50px;
+  }
+  to {
+    right: 100%;
+  }
 }
 
 .jump {
-    animation: jump 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+  animation: jumpAnim 1s ease-out;
 }
+
+@keyframes jumpAnim {
+  0% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 100px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
