@@ -8,18 +8,16 @@
 </head>
 <body>
   <h1>Dino Clone Game</h1>
+  <p id="gameOver" class="hide">💀 Game Over! Press space or tap anywhere to continue</p>
+  <p id="score">Score: 0</p>
+  <p id="highScore">High Score: 0</p>
+  <p id="speedDisplay">Speed: 2.00s</p>
 
-  <div id="gameBar">
-    <p id="gameOver" class="hide">💀 <strong>Game Over!</strong> Press space or tap screen to continue</p>
-    <p id="score">Score: 0</p>
-    <p id="highScore">High Score: 0</p>
-    <p id="speedDisplay">Speed: 2.00s</p>
-  </div>
-
-  <div class="game">
+  <div class="game" id="game">
     <div id="dino"></div>
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
