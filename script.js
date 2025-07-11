@@ -30,6 +30,36 @@ function jump () {
     }, 1000);
 }
 
+// Day and night circle
+
+let isDay = true;
+let dayNightIntervalId;
+function startDayNightCycle() {
+    // Ensure consistent state
+    isDay = true;
+    game.classList.add("day");
+    game.classList.remove("night");
+
+    // Clear any existing interval
+    clearInterval(dayNightIntervalId);
+
+    // Start a new cycle
+    dayNightIntervalId = setInterval(() => {
+        if (gamePaused) return;
+
+        if (isDay) {
+            game.classList.add("day");
+            game.classList.remove("night");
+        } else {
+            game.classList.add("night");
+            game.classList.remove("day");
+        }
+
+        isDay = !isDay;
+    }, 10000); // 20 seconds
+}
+
+
 function createObstacle() {
     const obstacle = document.createElement("div");
     obstacle.classList.add("obstacle");
@@ -109,6 +139,8 @@ function resetGame() {
     gameOverMusic.currentTime = 0;
     jumpMusic.pause();
     jumpMusic.currentTime = 0;
+
+    startDayNightCycle();
 
     document.querySelectorAll(".obstacle").forEach(ob => ob.remove());
     obstacleSpeed = 2;
